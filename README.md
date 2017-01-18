@@ -49,24 +49,24 @@ This rule aims to avoid compilation errors in React when a component's name star
 The following patterns are considered warnings:
 
 ```js
-
 <this.ComponentName />
 <this.ComponentName>Content</this.ComponentName>
-
 ```
 
 The following patterns are not warnings:
 
 ```js
-
 <div />
 <MyComponent />
-
 ```
 
-As alternatives, use either of these options:
+As alternatives, use either of these options in your render method:
 
-```
+```js
 const Component = this.Component;
+<Component />
+
 const { ComponentA, ComponentB } = this;
+<ComponentA />
+<ComponentB />
 ```
